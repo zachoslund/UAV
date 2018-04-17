@@ -13,11 +13,13 @@ rect=[150 200 400 150];
 clear PRfleet;
 PRFleet=fleetManager; %% manages Puerto Rico UAV fleet
 PRFleet.map='PuertoRico.png'; %% UAV Fleet is deployed to Puerto Rico
-PRFleet.numUAVS=2;       %%Size of UAV fleet
+PRFleet.numUAVS=3;       %%Size of UAV fleet
 
 %% Specify Base Locations
 PRFleet.base(1,1)=700; PRFleet.base(1,2)=150;  %Base 1 
 PRFleet.base(2,1)=100; PRFleet.base(2,2)=300;  %Base 2 
+PRFleet.base(3,1)=650; PRFleet.base(3,2)=420;  %Base 3 
+
 
 for i=1:PRFleet.numUAVS
 %% Assign UAV to bases 
@@ -25,7 +27,9 @@ for i=1:PRFleet.numUAVS
  PRFleet.UAV(i,1).x=PRFleet.base(i,1); %%  position each UAV at a base 
  PRFleet.UAV(i,1).y=PRFleet.base(i,2); %% 
  %% Assign UAV speeds
- PRFleet.UAV(i,1).speed=speed(i,1); 
+ PRFleet.UAV(1,1).speed=speed(1,1); 
+ PRFleet.UAV(2,1).speed=speed(2,1); 
+ PRFleet.UAV(3,1).speed=speed(1,1); 
 end
 
 %% Plot Bases and UAV positions
